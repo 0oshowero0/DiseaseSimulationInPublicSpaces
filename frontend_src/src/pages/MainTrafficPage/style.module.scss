@@ -1,0 +1,51 @@
+.trafficPageContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  background-color: #2b3440;
+
+  .leftGraph {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+
+    .roadSpeedMap {
+      //flex: 1;
+      height: 300px;
+      position: relative;
+    }
+
+    .carSpeedIntervalGraph {
+      flex: 1;
+      position: relative;
+    }
+  }
+
+  .mainMapWrapper {
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    position: relative;
+
+    .clock {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 100;
+    }
+  }
+
+  .rightGraph {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+
+    .trafficIndexGraph, .congestionRationxGraph {
+      width: 100%;
+      flex: 1;
+      position: relative;
+    }
+  }
+
+}

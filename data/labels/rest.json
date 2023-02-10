@@ -1,0 +1,40 @@
+{
+  "near_A": {
+    "ID": "near_A",
+    "down_left": [
+      335,
+      522
+    ],
+    "down_right": [
+      329,
+      567
+    ],
+    "top_left": [
+      309,
+      519
+    ],
+    "top_right": [
+      296,
+      561
+    ]
+  },
+  "near_B": {
+    "ID": "near_B",
+    "down_left": [
+      486,
+      342
+    ],
+    "down_right": [
+      474,
+      385
+    ],
+    "top_left": [
+      444,
+      334
+    ],
+    "top_right": [
+      438,
+      378
+    ]
+  }
+}

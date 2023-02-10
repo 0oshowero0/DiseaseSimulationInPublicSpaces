@@ -1,0 +1,32 @@
+@import "../../../assets/styles/utils";
+
+.timeControllerPanelContainer {
+  @include card;
+  @include center;
+
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .middleAbs {
+    @include center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    .floatUp {
+      position: relative;
+      bottom: 50px;
+    }
+  }
+
+  .startComment, .endComment {
+    margin: 0 40px;
+  }
+
+  .middleSlider {
+    flex: 1;
+  }
+}

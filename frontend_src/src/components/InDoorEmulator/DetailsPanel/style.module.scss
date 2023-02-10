@@ -1,0 +1,66 @@
+@import '../../../assets/styles/utils';
+
+.detailsPanelContainer {
+  @include card;
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  overflow-y: scroll;
+
+  .panelTitle {
+    margin: 10px 0 20px;
+  }
+
+  .none {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .people {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+    text-align: left;
+
+    .nCovBtn {
+      &:global(.ant-switch-checked) {
+        background-color: darkred;
+
+        &:focus {
+          box-shadow: 0 0 0 2px rgba(255, 24, 24, 0.2)
+        }
+      }
+
+      :global(.ant-switch-inner) {
+        color: yellow;
+      }
+    }
+  }
+}
+
+.spanTag{
+  box-sizing: border-box;
+  border-radius: 3px;
+  padding: 2px 8px;
+  &.tagDanger{
+    background: #cf3636;
+    color: #ffffff;
+  }
+  &.tagWarning{
+    background: #ffc725;
+    color: #2b3440;
+  }
+  &.tagSafe{
+    background: #00863e;
+    color: #ffffff;
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "name": "fiblab-web",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@ant-design/icons": "^4.5.0",
+    "@createjs/easeljs": "^2.0.0-beta.4",
+    "@sentry/react": "^5.28.0",
+    "@sentry/tracing": "^5.28.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@turf/buffer": "^5.1.5",
+    "@turf/helpers": "^6.1.4",
+    "@turf/turf": "^5.1.6",
+    "ant-design-pro": "^2.3.2",
+    "antd": "^4.16.2",
+    "axios": "^0.21.0",
+    "echarts": "^4.9.0",
+    "echarts-for-react": "^2.0.16",
+    "echarts-gl": "^1.1.2",
+    "google-protobuf": "^3.14.0",
+    "grpc-web": "^1.2.1",
+    "lodash": "^4.17.20",
+    "mapbox-gl": "^1.13.0",
+    "moment": "^2.29.1",
+    "node-sass": "4.14.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-draggable": "^4.4.3",
+    "react-mapbox-gl": "^5.1.1",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1",
+    "react-three-fiber": "^5.3.18",
+    "robust-point-in-polygon": "^1.0.3",
+    "simpleheat": "^0.4.0",
+    "three": "^0.125.2",
+    "web-vitals": "^0.2.4"
+  },
+  "scripts": {
+    "start": "PORT=9000 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "upload": "rsync -r ./build/ root@fiblab.winry.cn:/var/www/fiblab/",
+    "publish": "npm-run-all -s build upload",
+    "proto": "cd scripts && bash build-proto.sh"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "protoc-gen-grpc-web": "^1.2.0"
+  }
+}

@@ -1,0 +1,27 @@
+.inDoorMapContainer {
+  background-color: #e5e5e5;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+
+  .draggable {
+    position: absolute;
+    cursor: move;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+
+    img {
+      transition: all 0.2s linear;
+      position: relative;
+    }
+  }
+
+  .canvas {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}

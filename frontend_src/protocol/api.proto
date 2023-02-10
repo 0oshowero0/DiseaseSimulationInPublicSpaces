@@ -1,0 +1,145 @@
+syntax = "proto3";
+
+package fiblab.api;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/struct.proto";
+
+message Test {
+  string msg = 1;
+}
+
+message Coordinate {
+  double lng = 1;
+  double lat = 2;
+}
+
+message CarRoute {
+  string name = 1;
+  google.protobuf.Timestamp start = 2;
+  double initSpeed = 3;
+  double lastSpeed = 4;
+  repeated Coordinate route = 5;
+}
+
+message Road {
+  string key = 1;
+  string name = 2;
+//  string collection = 3;
+  int32 level = 4;
+  repeated Coordinate shape = 5;
+}
+
+message RoadSpeed {
+  string key = 1;
+  google.protobuf.Timestamp start = 2;
+  google.protobuf.Timestamp end = 3;
+//  string collection = 4;
+  int32 length = 5;
+  double speed = 6;
+}
+
+message RoadChart {
+  google.protobuf.Timestamp start = 1;
+  google.protobuf.Timestamp end = 2;
+//  string collection = 3;
+  string type = 4;
+  int32 length = 5;
+  // 现在用Struct得写类型判断，暂时搁置，使用json string替代
+//  google.protobuf.Struct data = 6;
+  string data = 6;
+}
+
+message GetRoutesRequest {
+  Coordinate center = 1;
+  int32 min = 2; // by meter
+  int32 max = 3; // by meter
+  google.protobuf.Timestamp start = 4; // by time
+  google.protobuf.Timestamp end = 5; // by time
+  string collection = 6;
+  int32 limit = 7;
+  int32 skip = 8;
+}
+
+message GetRoutesResponse {
+  repeated CarRoute results = 1;
+}
+
+message GetRoadsRequest {
+  int32 level = 1;
+  string collection=2;
+  int32 skip = 3;
+  int32 limit = 4;
+}
+
+message GetRoadsResponse {
+  repeated Road results = 1;
+}
+
+message GetRoadSpeedsRequest {
+  //  int32 level = 1; // by meter
+  string collection = 2;
+  google.protobuf.Timestamp start = 3;
+  google.protobuf.Timestamp end = 4;
+  int32 skip = 5;
+  int32 limit = 6;
+}
+
+message GetRoadSpeedsResponse {
+  repeated RoadSpeed results = 1;
+}
+
+message GetRoadSpeedsIncrementRequest {
+  //  int32 level = 1; // by meter
+  string collection = 2;
+  google.protobuf.Timestamp last = 3;
+  google.protobuf.Timestamp now = 4;
+  int32 skip = 5;
+  int32 limit = 6;
+}
+
+message GetRoadSpeedsIncrementResponse {
+  repeated RoadSpeed results = 1;
+  // 有效时间范围
+  google.protobuf.Timestamp validRangeStart = 2;
+  google.protobuf.Timestamp validRangeEnd = 3;
+}
+
+message GetRoadChartsRequest {
+  string collection=1;
+  string type = 2;
+  google.protobuf.Timestamp start = 3;
+  google.protobuf.Timestamp end = 4;
+  int32 skip = 5;
+  int32 limit = 6;
+}
+
+message GetRoadChartsResponse {
+  repeated RoadChart results = 1;
+}
+
+message GetRoadChartsIncrementRequest {
+  string collection=1;
+  string type = 2;
+  google.protobuf.Timestamp last = 3;
+  google.protobuf.Timestamp now = 4;
+  int32 skip = 5;
+  int32 limit = 6;
+}
+
+message GetRoadChartsIncrementResponse {
+  repeated RoadChart results = 1;
+  // 有效时间范围
+  google.protobuf.Timestamp validRangeStart = 2;
+  google.protobuf.Timestamp validRangeEnd = 3;
+}
+
+service ApiService {
+  rpc test(Test) returns (Test);
+  rpc getRoutes(GetRoutesRequest) returns (GetRoutesResponse);
+  rpc getRoads(GetRoadsRequest) returns (GetRoadsResponse);
+  rpc getRoadSpeeds(GetRoadSpeedsRequest) returns (GetRoadSpeedsResponse);
+  rpc getRoadSpeedsIncrement(GetRoadSpeedsIncrementRequest) returns (GetRoadSpeedsIncrementResponse);
+  rpc getRoadCharts(GetRoadChartsRequest) returns (GetRoadChartsResponse);
+  rpc getRoadChartsIncrement(GetRoadChartsIncrementRequest) returns (GetRoadChartsIncrementResponse);
+}

@@ -1,0 +1,31 @@
+.mapWrapper {
+  $bg-color: rgba(255, 255, 255, 0.4);
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  :global {
+    .mapboxgl-popup {
+      max-width: 400px;
+      font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+      text-align: left;
+
+      .mapboxgl-popup-content {
+        background-color: $bg-color;
+      }
+
+      &.mapboxgl-popup-anchor-bottom {
+        .mapboxgl-popup-tip {
+          border-top-color: $bg-color;
+        }
+      }
+
+      &.mapboxgl-popup-anchor-top {
+        .mapboxgl-popup-tip {
+          border-bottom-color: $bg-color;
+        }
+      }
+    }
+  }
+}

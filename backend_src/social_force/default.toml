@@ -1,0 +1,36 @@
+title = "Social Force Default Config File"
+
+resolution = 5
+step_width = 0.4
+explore_rate=0.8
+
+[Pedestrian]
+agent_radius = 0.35
+max_speed_multiplier = 1.3
+tau = 0.5
+
+[DesiredForce]
+factor = 1.0
+relaxation_time = 0.5
+goal_threshold = 5
+
+[ObstacleForce]
+factor = 10.0
+sigma = 0.2
+threshold = 3.0
+
+[PedRepulsiveForce]
+factor = 1.5
+v0 = 2.1
+sigma = 0.3
+# fov params
+fov_phi = 100.0
+fov_factor = 0.5 # out of view factor
+
+[PedRepulsiveForceSocialDistancing]
+factor = 4
+v0 = 2.1
+sigma = 1
+# fov params
+fov_phi = 100.0
+fov_factor = 0.5 # out of view factor

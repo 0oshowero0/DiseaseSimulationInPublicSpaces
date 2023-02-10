@@ -1,0 +1,59 @@
+{
+  "A_inland": {
+    "ID": "A_inland",
+    "down_left": [
+      379,
+      618
+    ],
+    "down_right": [
+      381,
+      629
+    ],
+    "top_left": [
+      366,
+      619
+    ],
+    "top_right": [
+      369,
+      630
+    ]
+  },
+  "A_internation": {
+    "ID": "A_internation",
+    "down_left": [
+      415,
+      627
+    ],
+    "down_right": [
+      418,
+      646
+    ],
+    "top_left": [
+      385,
+      632
+    ],
+    "top_right": [
+      389,
+      649
+    ]
+  },
+  "B_inland": {
+    "ID": "B_inland",
+    "down_left": [
+      415,
+      283
+    ],
+    "down_right": [
+      414,
+      295
+    ],
+    "top_left": [
+      370,
+      273
+    ],
+    "top_right": [
+      367,
+      285
+    ]
+  }
+}

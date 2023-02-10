@@ -1,0 +1,17 @@
+[train]
+max_epoch = 500
+lr = 1e-4
+test_freq = 10
+checkpoint_freq = 100
+[model]
+input_channel = 1
+output_channel = 1
+upscale_factor=  4
+base_filter = 64
+feat = 256
+kernel = 6
+stride = 2
+padding = 2
+num_stages = 7
+input_max = 26.6
+gt_max = 0.11604986371768881

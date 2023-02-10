@@ -1,0 +1,41 @@
+@import "../../../assets/styles/utils";
+
+.functionalPanelContainer {
+  @include card;
+  @include center;
+
+  width: 600px;
+  height: 50px;
+
+  .button {
+    margin: 0 10px;
+  }
+}
+
+.floatToolbar{
+  position: absolute;
+  margin-left: 520px;
+}
+
+.floatInfos{
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  width: 600px;
+  margin-left: -300px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-top: 1px solid #555;
+  border-right: 1px solid #555;
+}
+
+.floatInfosItem{
+  font-size: 14px;
+  display: inline-block;
+  color: black;
+  padding: 4px;
+  box-sizing: border-box;
+  text-align: left;
+  width: 100%;
+  border-bottom: 1px solid #555;
+  border-left: 1px solid #555;
+}
