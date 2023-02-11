@@ -27,23 +27,28 @@ wget -c https://repo.anaconda.com/archive/Anaconda3-2022.10-Linux-x86_64.sh
 ```
 3. Quit current terminal window and open a new one. You should able to see (base) before your command line. 
 
-4. Use the following command to install pre-configured environment through the provided `.yml` file (you should go to the directory of this project before performing the command). 
+4. Use the following command to create environment. 
 ``` bash
-conda env create -f ./environment.yml
+conda create -n diseasesim python=3.7
+conda activate diseasesim
+pip install ipython pandas pillow matplotlib setproctitle networkx scikit-learn scipy tqdm GPUtil jupyterlab notebook h5py statsmodels dgl-cu101 toml Flask flask-cors shapely
 ```
 
-5. Finally, activate the installed environment. Now you can run the example code through the following chapter.
+5. Download Pytorch from the following location. 
 ``` bash
-conda activate torch-1.5-py3
+wget -c https://download.pytorch.org/whl/cu101/torch-1.5.0%2Bcu101-cp37-cp37m-linux_x86_64.whl
+wget -c https://download.pytorch.org/whl/cu101/torchvision-0.6.0%2Bcu101-cp37-cp37m-linux_x86_64.whl
+pip install torch-1.5.0+cu101-cp37-cp37m-linux_x86_64.whl
+pip install torchvision-0.6.0+cu101-cp37-cp37m-linux_x86_64.whl
 ```
+
+6. Download and install cuda 10.1 and cudnn-10.1 v7.6.5.32. 
 
 (Optional) If you need to exit the environment for other project, use the following command.
 
 ``` bash
 conda deactivate 
 ```
-
-
 
 ## Run the code
 ### Start backend
