@@ -9,8 +9,9 @@ This repo is the code for paper Disease Simulation in Airport Scenario Based on 
 
 ### Example System Information
 Operating System: Ubuntu 18.04.5 LTS
-CPU: AMD Ryzen Threadripper 2990WX 32-Core Processor
+CPU: Intel(R) Xeon(R) CPU E5-2650 v4
 Memory: 128G DDR4 Memory
+GPU: Titan Xp
 
 
 
@@ -31,10 +32,10 @@ wget -c https://repo.anaconda.com/archive/Anaconda3-2022.10-Linux-x86_64.sh
 ``` bash
 conda create -n diseasesim python=3.7
 conda activate diseasesim
-pip install ipython pandas pillow matplotlib setproctitle networkx scikit-learn scipy tqdm GPUtil jupyterlab notebook h5py statsmodels dgl-cu101 toml Flask flask-cors shapely
+pip install ipython pandas==1.1.5 pillow==8.1.0 matplotlib==3.3.3 setproctitle networkx==2.5 scikit-learn==0.24.1 scipy==1.4.1 tqdm GPUtil jupyterlab notebook h5py statsmodels dgl-cu101==0.5.3 toml Flask==1.1.2 flask-cors==3.0.10 shapely
 ```
 
-5. Download Pytorch from the following location. 
+5. Download Pytorch from the following location.
 ``` bash
 wget -c https://download.pytorch.org/whl/cu101/torch-1.5.0%2Bcu101-cp37-cp37m-linux_x86_64.whl
 wget -c https://download.pytorch.org/whl/cu101/torchvision-0.6.0%2Bcu101-cp37-cp37m-linux_x86_64.whl
